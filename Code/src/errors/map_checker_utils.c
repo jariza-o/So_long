@@ -1,43 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.c                                              :+:      :+:    :+:   */
+/*   map_checker_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 16:22:02 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/10 19:38:29 by jariza-o         ###   ########.fr       */
+/*   Created: 2023/07/12 19:11:08 by jariza-o          #+#    #+#             */
+/*   Updated: 2023/07/12 19:12:51 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-char	**ft_read_map(char *fd)
-{
-	char	**map;
-	int		i;
-	int		file;
-	int		file_len;
-
-	i = 0;
-	file_len = open(fd, O_RDONLY);
-	while (get_next_line(file_len) != NULL)
-		i++;
-	close (file_len);
-	map = malloc(sizeof(char *) * (i + 1)); //SE SUMA +1??
-	if (map == NULL)
-		return (NULL);
-	i = 0;
-	file = open(fd, O_RDONLY);
-	map[i] = get_next_line(file);
-	while (map[i] != NULL)
-	{
-		i++;
-		map[i] = get_next_line(file);
-	}
-	close (file);
-	return (map);
-}
 
 int	ft_check_symbols(char **map)
 {
@@ -96,19 +69,19 @@ int	ft_check_obj(char **map)
 
 	n = 0;
 	i = 0;
-	check_e = 0;
+	check_o = 0;
 	while (map[n])
 	{
 		while (map[n][i])
 		{
 			if (map[n][i] == 'C')
-				check_e = 1;
+				check_o = 1;
 			i++;
 		}
 		i = 0;
 		n++;
 	}
-	if (check_e == 0)
+	if (check_o == 0)
 		return (0);
 	return (1);
 }
@@ -136,6 +109,32 @@ int	ft_check_init(char **map)
 		n++;
 	}
 	if (check_i == 0)
+		return (0);
+	return (1);
+}
+
+int	ft_check_form(char **map)
+{
+	int	len;
+	int	n;
+	int	i;
+
+	len = 0;
+	n = 1;
+	while (map[0][len])
+		len++;
+	if (map[n] == NULL)
+		return (0);
+	while (map[n])
+	{
+		i = 0;
+		while (map[n][i])
+			i++;
+		if (len != i)
+			return (0);
+		n++;
+	}
+	if (len == n)
 		return (0);
 	return (1);
 }
