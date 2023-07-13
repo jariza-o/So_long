@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:22:02 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/12 19:29:06 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/13 15:52:52 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,23 @@
 int	map_checker(char **map)
 {
 	if (!ft_check_symbols(map))
-		return (ft_printf("Error: The map has incorrect symbols. For help run: so_long --help\n"), 0);
+		return (ft_printf("Error: The map has incorrect symbols. \
+		For help run: so_long --help\n"), 0);
 	else if (!ft_check_exit(map))
-		return (ft_printf("Error: The map has no or several exits. For help run: so_long --help\n"), 0);
+		return (ft_printf("Error: The map has no or several exits. \
+		For help run: so_long --help\n"), 0);
 	else if (!ft_check_obj(map))
-		return (ft_printf("Error: The map is missing objects. For help run: so_long --help\n"), 0);
+		return (ft_printf("Error: The map is missing objects. \
+		For help run: so_long --help\n"), 0);
 	else if (!ft_check_init(map))
-		return (ft_printf("Error: The map is missing or has several entries. For help run: so_long --help\n"), 0);
+		return (ft_printf("Error: The map is missing or has several entries. \
+		For help run: so_long --help\n"), 0);
 	else if (!ft_check_form(map))
-		return (ft_printf("Error: The map shape is not correct. For help run: so_long --help\n"), 0);
+		return (ft_printf("Error: The map shape is not correct. \
+		For help run: so_long --help\n"), 0);
 	else if (!ft_check_walls(map))
-		return (ft_printf("Error: The map does not have the correct walls. For help run: so_long --help\n"), 0);
+		return (ft_printf("Error: The map does not have the correct walls. \
+		For help run: so_long --help\n"), 0);
 	//FALTA COMPROBAR LOS CAMINOS
 	return (1);
 }
