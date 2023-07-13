@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:03:04 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/12 19:41:16 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/13 21:41:10 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	main(int argc, char **argv)
 		if (argv[1] == "--help")
 		{
 			//LLAMAR VARIABLE PARA HELP
-			return (0);
 		}
 		else
 		{
