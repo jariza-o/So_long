@@ -6,11 +6,11 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:22:02 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/13 15:52:52 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/14 21:59:53 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../include/so_long.h"
 
 int	map_checker(char **map)
 {

@@ -6,11 +6,11 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:11:08 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/12 19:12:51 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/15 00:12:55 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../include/so_long.h"
 
 int	ft_check_symbols(char **map)
 {
@@ -23,8 +23,8 @@ int	ft_check_symbols(char **map)
 	{
 		while (map[n][i])
 		{
-			if (map[n][i] != '0' || map[n][i] != '1' || map[n][i] != 'C' ||
-			map[n][i] != 'E' || map[n][i] != 'P' || map[n][i] != '\n')
+			if (map[n][i] != '0' && map[n][i] != '1' && map[n][i] != 'C' &&
+			map[n][i] != 'E' && map[n][i] != 'P')
 				return (0);
 			i++;
 		}

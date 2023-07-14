@@ -6,11 +6,11 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:12:25 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/12 19:12:48 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/15 01:02:51 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../include/so_long.h"
 
 int	ft_check_walls(char **map)
 {
@@ -21,21 +21,31 @@ int	ft_check_walls(char **map)
 	n = 1;
 	while (map[0][len])
 	{
-		if (map[0][len] != 1)
+		if (map[0][len] != '1')
+		{
+			ft_printf("%c MAL1 %d\n", map[0][len], len); //BORRAR
 			return (0);
+		}
 		len++;
 	}
+	// VER PORQUE SI HAGO LEN-- ME DA SEGMENTATION FAULT Y ASI NO PUEDO VER LOS MUROS FINALES
 	while (map[n])
 	{
-		if ((map[n][0] && map[n][len]) != 1)
+		if (map[n][0] != '1' || map[n][len] != '1')
+		{
+			ft_printf("%s MAL2 %d\n", map[n], len - 1); //BORRAR
 			return (0);
+		}
 		n++;
 	}
 	len = 0;
 	while (map[n - 1][len])
 	{
-		if (map[n][len] != 1)
+		if (map[n][len] != '1')
+		{
+			ft_printf("MAL3\n"); //BORRAR
 			return (0);
+		}
 		len++;
 	}
 	return (1);
