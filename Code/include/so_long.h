@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:06:47 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/14 23:41:37 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/15 18:59:42 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,21 @@
 # include <stdlib.h> //MALLOC
 # include <fcntl.h> //OPEN
 
+typedef struct s_game
+{
+	char	**map;
+	int		n_objs;
+}	t_game;
+
+/* Utils */
+/* Print Map*/
+void	ft_print_map(char **map);
+
 /* READ MAP */
 /* Read the map file */
 char	**ft_read_map(char *fd);
 /* Delete the \n from the map */
-char **ft_remove_linesbreaks(char **map);
+char	**ft_remove_linesbreaks(char **map);
 
 /* ERRORS */
 /* Check the pat and if the file is empty*/
