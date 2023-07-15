@@ -6,30 +6,30 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:22:02 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/15 18:46:15 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/15 19:48:27 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	map_checker(char **map)
+int	map_checker(t_game *game)
 {
-	if (!ft_check_symbols(map))
+	if (!ft_check_symbols(game))
 		return (ft_printf("Error: The map has incorrect symbols. \
 		For help run: so_long --help\n"), 0);
-	else if (!ft_check_exit(map))
+	else if (!ft_check_exit(game))
 		return (ft_printf("Error: The map has no or several exits. \
 		For help run: so_long --help\n"), 0);
-	else if (!ft_check_obj(map))
+	else if (!ft_check_obj(game))
 		return (ft_printf("Error: The map is missing objects. \
 		For help run: so_long --help\n"), 0);
-	else if (!ft_check_init(map))
+	else if (!ft_check_init(game))
 		return (ft_printf("Error: The map is missing or has several entries. \
 		For help run: so_long --help\n"), 0);
-	else if (!ft_check_form(map))
+	else if (!ft_check_form(game))
 		return (ft_printf("Error: The map shape is not correct. \
 		For help run: so_long --help\n"), 0);
-	else if (!ft_check_walls(map))
+	else if (!ft_check_walls(game))
 		return (ft_printf("Error: The map does not have the correct walls. \
 		For help run: so_long --help\n"), 0);
 	//FALTA COMPROBAR LOS CAMINOS

@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:06:47 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/15 18:59:42 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/15 19:55:20 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,18 @@
 # include <stdlib.h> //MALLOC
 # include <fcntl.h> //OPEN
 
+typedef struct s_position
+{
+	int	x_position;
+	int	y_position;
+}	t_position;
+
 typedef struct s_game
 {
+	t_position	*map_size;
 	char	**map;
 	int		n_objs;
+	t_position	*person;
 }	t_game;
 
 /* Utils */
@@ -38,18 +46,18 @@ char	**ft_remove_linesbreaks(char **map);
 /* Check the pat and if the file is empty*/
 int		ft_check_file(char *fd);
 /* Run all checkers */
-int		map_checker(char **map);
+int		map_checker(t_game *game);
 /* Check the symbols */
-int		ft_check_symbols(char **map);
+int		ft_check_symbols(t_game *game);
 /* Check the exit */
-int		ft_check_exit(char **map);
+int		ft_check_exit(t_game *game);
 /* Check the objects */
-int		ft_check_obj(char **map);
+int		ft_check_obj(t_game *game);
 /* Check the start position */
-int		ft_check_init(char **map);
+int		ft_check_init(t_game *game);
 /* Check the form */
-int		ft_check_form(char **map);
+int		ft_check_form(t_game *game);
 /* Check the walls */
-int		ft_check_walls(char **map);
+int		ft_check_walls(t_game *game);
 
 #endif

@@ -6,35 +6,35 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:12:25 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/15 18:44:33 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/15 19:48:24 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	ft_check_walls(char **map)
+int	ft_check_walls(t_game *game)
 {
 	int	len;
 	int	n;
 
 	len = 0;
 	n = 1;
-	while (map[0][len])
+	while (game->map[0][len])
 	{
-		if (map[0][len] != '1')
+		if (game->map[0][len] != '1')
 			return (0);
 		len++;
 	}
-	while (map[n])
+	while (game->map[n])
 	{
-		if (map[n][0] != '1' || map[n][len - 1] != '1')
+		if (game->map[n][0] != '1' || game->map[n][len - 1] != '1')
 			return (0);
 		n++;
 	}
 	len = 0;
-	while (map[n - 1][len])
+	while (game->map[n - 1][len])
 	{
-		if (map[n - 1][len] != '1')
+		if (game->map[n - 1][len] != '1')
 			return (0);
 		len++;
 	}
