@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:22:02 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/15 19:48:27 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/19 21:37:38 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	map_checker(t_game *game)
 		return (ft_printf("Error: The map is missing objects. \
 		For help run: so_long --help\n"), 0);
 	else if (!ft_check_init(game))
-		return (ft_printf("Error: The map is missing or has several entries. \
+		return (ft_printf("Error: The map entry is missing or has several entries. \
 		For help run: so_long --help\n"), 0);
 	else if (!ft_check_form(game))
 		return (ft_printf("Error: The map shape is not correct. \
@@ -32,7 +32,9 @@ int	map_checker(t_game *game)
 	else if (!ft_check_walls(game))
 		return (ft_printf("Error: The map does not have the correct walls. \
 		For help run: so_long --help\n"), 0);
-	//FALTA COMPROBAR LOS CAMINOS
+	else if (!ft_check_path(game))
+		return (ft_printf("Error: The map path isn't correct. \
+		For help run: so_long --help\n"), 0);
 	return (1);
 }
 

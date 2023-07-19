@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:12:25 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/15 19:48:24 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/19 21:36:28 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +41,39 @@ int	ft_check_walls(t_game *game)
 	return (1);
 }
 
-// HACER CHECKER CAMINO CON FLOOD_FILL
+void	ft_flood_fill(t_game *game, int p_y, int p_x)
+{
+	if (p_y < 0 || p_x < 0 || p_y > game->map_size.y_position
+		|| p_x > game->map_size.x_position || game->map_copy[p_y][p_x] == '1'
+			|| game->map_copy[p_y][p_x] == 'F')
+		return ;
+	if (game->map_copy[p_y][p_x] == 'E'
+			|| game->map_copy[p_y][p_x] == 'C')
+		game->map_copy[p_y][p_x] = '0';
+	game->map_copy[p_y][p_x] = 'F';
+	ft_flood_fill(game, p_y + 1, p_x);
+	ft_flood_fill(game, p_y - 1, p_x);
+	ft_flood_fill(game, p_y, p_x + 1);
+	ft_flood_fill(game, p_y, p_x - 1);
+}
 
-// void	ft_flood_fill(t_game *game, int p_y, int p_x)
-// {
-// 	if (p_y < 0 || p_x < 0 || p_y > game->num_row
-// 		|| p_x > game->num_col || game->map_copy[p_y][p_x] == '1'
-// 			|| game->map_copy[p_y][p_x] == 'F')
-// 		return ;
-// 	if (game->map_copy[p_y][p_x] == 'E'
-// 			|| game->map_copy[p_y][p_x] == 'C')
-// 		game->map_copy[p_y][p_x] = '0';
-// 	game->map_copy[p_y][p_x] = 'F';
-// 	ft_flood_fill(game, p_y + 1, p_x);
-// 	ft_flood_fill(game, p_y - 1, p_x);
-// 	ft_flood_fill(game, p_y, p_x + 1);
-// 	ft_flood_fill(game, p_y, p_x - 1);
-// }
+int	ft_check_path(t_game *game)
+{
+	int	n;
+	int	i;
 
-
-// int	ft_check_path(char **map)
-// {
-// 	t_point
-// 	flood_fill();
-// }
+	n = 1;
+	ft_flood_fill(game, game->person.y_position, game->person.x_position); // VER SI ESTO ESTÁ BIEN
+	while (game->map_copy[n])
+	{
+		i = 1;
+		while(game->map_copy[n][i])
+		{
+			if (game->map[n][i] == 'E' || game->map[n][i] == 'C')
+				return (0);
+			i++;
+		}
+		n++;
+	}
+	return (1);
+}

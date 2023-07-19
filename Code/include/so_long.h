@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:06:47 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/15 19:55:20 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/19 21:38:24 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ typedef struct s_position
 
 typedef struct s_game
 {
-	t_position	*map_size;
+	t_position	map_size;
 	char	**map;
+	char	**map_copy;
 	int		n_objs;
-	t_position	*person;
+	t_position	person;
 }	t_game;
 
 /* Utils */
@@ -59,5 +60,8 @@ int		ft_check_init(t_game *game);
 int		ft_check_form(t_game *game);
 /* Check the walls */
 int		ft_check_walls(t_game *game);
+/* Check the path */
+void	ft_flood_fill(t_game *game, int p_y, int p_x);
+int		ft_check_path(t_game *game);
 
 #endif
