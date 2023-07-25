@@ -6,12 +6,13 @@
 #    By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/10 15:06:08 by jariza-o          #+#    #+#              #
-#    Updated: 2023/07/15 18:55:28 by jariza-o         ###   ########.fr        #
+#    Updated: 2023/07/25 21:15:45 by jariza-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Libreries
 LIBFT =		libft/libft.a
+MLX42 =		MLX42/libmlx42.a
 
 # Flags
 CFLAGS =	-Wall -Werror -Wextra
@@ -30,13 +31,15 @@ all:		$(NAME)
 
 $(NAME): ${OBJT}
 			make -C libft
-			gcc ${CFLAGS} ${OBJT} ${LIBFT} -o ${NAME}
+			gcc ${CFLAGS} ${OBJT} ${LIBFT} $(MLX42) -framework Cocoa -framework OpenGL -framework IOKit -Iinclude -lglfw -L"/Users/jariza-o/.brew/opt/glfw/lib/" -o ${NAME}
 
 clean:
 			rm -f ${OBJT}
+			rm -rf $(LIBMLX)/build
+			make clean -s -C libft
 
 fclean: 	clean
-			rm -f ${NAME} 
+			rm -f ${NAME}
 			make fclean -s -C libft
 
 re: 		fclean all

@@ -6,11 +6,21 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:03:04 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/19 21:23:18 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/25 21:12:26 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+void	ft_so_long(t_game *game)
+{
+	game->mlx = mlx_init(game->map_size.x_position * SPRITE, game->map_size.x_position * SPRITE, "so_long", false);
+	if (!game->mlx)
+	{
+		ft_printf("Arguments are not correct. For help run: so_long --help"); //ELIMINAR
+		// CREAR FUNCIÖN ERROR
+	}
+}
 
 int	main(int argc, char **argv)
 {
@@ -30,27 +40,10 @@ int	main(int argc, char **argv)
 			game.map = ft_read_map(argv[1]);
 			game.map_copy = ft_read_map(argv[1]);
 			if (!map_checker(&game)) //si todos los demás checkers son correctos
-			{
-				ft_printf("GOOD %s\n", game.map[0]);
-			}
-			// if (!ft_check_symbols(&game))
-			// 	ft_printf("Error: The map has incorrect symbols.");
-			// if (!ft_check_exit(&game))
-			// 	ft_printf("Error: The map has no or several exits.");
-			// if (!ft_check_obj(&game))
-			// 	ft_printf("Error: The map is missing objects.");
-			// if (!ft_check_init(&game))
-			// 	ft_printf("Error: The map is missing or has several entries");
-			// if (!ft_check_form(&game))
-			// 	ft_printf("Error: The map shape is not correct.");
-			// if (!ft_check_walls(&game))
-			// 	ft_printf("Error: The map does not have the correct walls.");
+				ft_so_long(&game);
 		}
 	}
 	else
-	{
-		ft_printf("Arguments are not correct. For help run: so_long --help");
-		ft_printf(" For help run: so_long --help\n");
-	}
+		ft_printf("Arguments are not correct. For help run: so_long --help\n");
 	return (0);
 }

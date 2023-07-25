@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:06:47 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/19 21:38:24 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/07/25 21:09:50 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "../MLX42/include/MLX42/MLX42.h"
 # include <stdlib.h> //MALLOC
 # include <fcntl.h> //OPEN
+# define SPRITE 64
 
 typedef struct s_position
 {
@@ -26,6 +27,7 @@ typedef struct s_position
 
 typedef struct s_game
 {
+	mlx_t	*mlx;
 	t_position	map_size;
 	char	**map;
 	char	**map_copy;
@@ -63,5 +65,8 @@ int		ft_check_walls(t_game *game);
 /* Check the path */
 void	ft_flood_fill(t_game *game, int p_y, int p_x);
 int		ft_check_path(t_game *game);
+
+/* GAME FUCTIONS */
+void	ft_so_long(t_game *game);
 
 #endif
