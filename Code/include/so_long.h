@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:06:47 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/25 21:09:50 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/01 16:50:31 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,24 @@ typedef struct s_position
 	int	y_position;
 }	t_position;
 
+typedef struct s_textures
+{
+	mlx_texture_t	*floor;
+	mlx_texture_t	*walls;
+	mlx_texture_t	*person;
+	mlx_texture_t	*obj;
+	mlx_texture_t	*exit;
+}	t_textures;
+
+typedef struct s_images
+{
+	mlx_image_t	*floor;
+	mlx_image_t	*walls;
+	mlx_image_t	*person;
+	mlx_image_t	*obj;
+	mlx_image_t	*exit;
+}	t_images;
+
 typedef struct s_game
 {
 	mlx_t	*mlx;
@@ -33,6 +51,8 @@ typedef struct s_game
 	char	**map_copy;
 	int		n_objs;
 	t_position	person;
+	t_textures	textures;
+	t_images	images;
 }	t_game;
 
 /* Utils */
@@ -68,5 +88,9 @@ int		ft_check_path(t_game *game);
 
 /* GAME FUCTIONS */
 void	ft_so_long(t_game *game);
+
+/* MAP GAME */
+/* Load MAP textures */
+void	ft_load_textures(t_game *game);
 
 #endif

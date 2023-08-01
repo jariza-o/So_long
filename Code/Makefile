@@ -6,7 +6,7 @@
 #    By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/10 15:06:08 by jariza-o          #+#    #+#              #
-#    Updated: 2023/07/25 21:15:45 by jariza-o         ###   ########.fr        #
+#    Updated: 2023/08/01 16:26:22 by jariza-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS =	-Wall -Werror -Wextra
 
 # So_long
 NAME =		so_long
-SRC =		src/so_long.c src/map.c src/utils.c \
+SRC =		src/so_long.c src/map/map.c src/utils.c \
 			src/errors/map_checker_utils.c src/errors/map_checker_utils2.c src/errors/map_errors.c \
 
 OBJT =		$(SRC:.c=.o)

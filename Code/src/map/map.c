@@ -6,11 +6,11 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:19:52 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/15 19:06:32 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/01 16:27:17 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long.h"
 
 char	**ft_read_map(char *fd)
 {

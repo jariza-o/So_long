@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:03:04 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/25 21:12:26 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/01 16:50:19 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,28 @@
 
 void	ft_so_long(t_game *game)
 {
+	mlx_set_setting(MLX_MAXIMIZED, true); //nose si esto iría aquí
 	game->mlx = mlx_init(game->map_size.x_position * SPRITE, game->map_size.x_position * SPRITE, "so_long", false);
 	if (!game->mlx)
 	{
-		ft_printf("Arguments are not correct. For help run: so_long --help"); //ELIMINAR
+		ft_printf("Graphic error\n"); //ELIMINAR
+		//exit(1) //porque???
 		// CREAR FUNCIÖN ERROR
 	}
+	//Load MAP TEXTURE
+	ft_load_textures(game);
+	
+	// Convert texture to a displayable image and Display the Image
+	game->images.walls = mlx_texture_to_image(game->mlx, game->textures.walls);
+	// mlx_image_to_window(game->mlx, game->images.walls,
+	game->images.floor = mlx_texture_to_image(game->mlx, game->textures.floor);
+	game->images.person = mlx_texture_to_image(game->mlx, game->textures.person);
+	game->images.obj = mlx_texture_to_image(game->mlx, game->textures.obj);
+	game->images.exit = mlx_texture_to_image(game->mlx, game->textures.exit);
+	
+	// Display the image
+	
+	mlx_loop(game->mlx);
 }
 
 int	main(int argc, char **argv)
