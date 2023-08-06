@@ -58,6 +58,24 @@ void	ft_render_others(t_game *game)
 				if (mlx_image_to_window(game->mlx, game->images.walls, i * SPRITE, n * SPRITE) < 0) // La función mlx_image_to_windows como la llamas en el if se ejecuta hay
 					exit(1); //Al principio se pone exit(1) y libera toda la memoria, despues no se aconseja ponerlo.
 			}
+			else if (game->map[n][i] == 'P')
+			{
+				game->images.person = mlx_texture_to_image(game->mlx, game->textures.person);
+				if (mlx_image_to_window(game->mlx, game->images.person, i * SPRITE, n * SPRITE) < 0) // La función mlx_image_to_windows como la llamas en el if se ejecuta hay
+					exit(1);
+			}
+			else if (game->map[n][i] == 'C')
+			{
+				game->images.obj = mlx_texture_to_image(game->mlx, game->textures.obj);
+				if (mlx_image_to_window(game->mlx, game->images.obç, i * SPRITE, n * SPRITE) < 0) // La función mlx_image_to_windows como la llamas en el if se ejecuta hay
+					exit(1);
+			}
+			else if (game->map[n][i] == 'E')
+			{
+				game->images.exit = mlx_texture_to_image(game->mlx, game->textures.exit);
+				if (mlx_image_to_window(game->mlx, game->images.exit, i * SPRITE, n * SPRITE) < 0) // La función mlx_image_to_windows como la llamas en el if se ejecuta hay
+					exit(1)
+			}
 			i++;
 		}
 		n++;

@@ -92,5 +92,6 @@ void	ft_so_long(t_game *game);
 /* MAP GAME */
 /* Load MAP textures */
 void	ft_load_textures(t_game *game);
+void	ft_render_others(t_game *game);
 
 #endif

@@ -19,23 +19,18 @@ void	ft_so_long(t_game *game)
 	if (!game->mlx)
 	{
 		ft_printf("Graphic error\n"); //ELIMINAR
-		//exit(1) //porque???
+		exit(1) //porque???
 		// CREAR FUNCIÖN ERROR
 	}
 	//Load MAP TEXTURE
 	ft_load_textures(game);
 	
-	// Convert texture to a displayable image and Display the Image
-	game->images.walls = mlx_texture_to_image(game->mlx, game->textures.walls);
-	// mlx_image_to_window(game->mlx, game->images.walls,
-	game->images.floor = mlx_texture_to_image(game->mlx, game->textures.floor);
-	game->images.person = mlx_texture_to_image(game->mlx, game->textures.person);
-	game->images.obj = mlx_texture_to_image(game->mlx, game->textures.obj);
-	game->images.exit = mlx_texture_to_image(game->mlx, game->textures.exit);
+	//Render MAP
+	ft_render_floor(game);
+	ft_render_others(game);
 	
-	// Display the image
-	
-	mlx_loop(game->mlx);
+	mlx_loop(game->mlx); // mantener abierto el juego
+	mlx_terminate(mlx); // cerrar el juego
 }
 
 int	main(int argc, char **argv)
