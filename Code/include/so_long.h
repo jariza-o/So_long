@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:06:47 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/01 16:50:31 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/08 20:55:00 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void	ft_so_long(t_game *game);
 /* MAP GAME */
 /* Load MAP textures */
 void	ft_load_textures(t_game *game);
+void	ft_render_floor(t_game *game);
 void	ft_render_others(t_game *game);
 
 #endif
