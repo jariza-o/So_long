@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:03:04 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/08 22:23:06 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/09 16:16:56 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_so_long(t_game *game)
 {
 	mlx_set_setting(MLX_MAXIMIZED, true); //nose si esto iría aquí
-	game->mlx = mlx_init(game->map_size.x_position * SPRITE, game->map_size.x_position * SPRITE, "so_long", false);
+	game->mlx = mlx_init(game->map_size.x_position * SPRITE, game->map_size.y_position * SPRITE, "so_long", false);
 	if (!game->mlx)
 	{
 		ft_printf("Graphic error\n"); //ELIMINAR
@@ -28,7 +28,8 @@ void	ft_so_long(t_game *game)
 	//Render MAP
 	ft_render_floor(game);
 	ft_render_others(game);
-	//ft_player();
+	ft_render_person(game);
+	mlx_key_hook(game->mlx, keys, game);
 	mlx_loop(game->mlx); // mantener abierto el juego
 	mlx_terminate(game->mlx); // cerrar el juego
 }

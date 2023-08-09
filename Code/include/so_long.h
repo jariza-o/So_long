@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:06:47 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/08 20:55:00 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:54:18 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,11 @@ typedef struct s_game
 	char	**map;
 	char	**map_copy;
 	int		n_objs;
+	int		c_objs;
 	t_position	person;
 	t_textures	textures;
 	t_images	images;
+	int	moves;
 }	t_game;
 
 /* Utils */
@@ -94,5 +96,9 @@ void	ft_so_long(t_game *game);
 void	ft_load_textures(t_game *game);
 void	ft_render_floor(t_game *game);
 void	ft_render_others(t_game *game);
+void	ft_render_person(t_game *game);
+
+/* Keys */
+void	keys(mlx_key_data_t keydata, void *param);
 
 #endif

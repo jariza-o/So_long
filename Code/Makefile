@@ -6,7 +6,7 @@
 #    By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/10 15:06:08 by jariza-o          #+#    #+#              #
-#    Updated: 2023/08/08 22:21:53 by jariza-o         ###   ########.fr        #
+#    Updated: 2023/08/09 13:37:31 by jariza-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ CFLAGS =	-Wall -Werror -Wextra
 # So_long
 NAME =		so_long
 SRC =		src/so_long.c src/utils.c \
-			src/map/map.c src/game/render.c \
+			src/map/map.c \
+			src/game/render.c src/game/keys.c \
 			src/errors/map_checker_utils.c src/errors/map_checker_utils2.c src/errors/map_errors.c \
 
 OBJT =		$(SRC:.c=.o)
@@ -32,16 +33,19 @@ all:		$(NAME)
 
 $(NAME): ${OBJT}
 			make -C libft
+			make -C MLX42
 			gcc ${CFLAGS} ${OBJT} ${LIBFT} $(MLX42) -framework Cocoa -framework OpenGL -framework IOKit -Iinclude -lglfw -L"/Users/jariza-o/.brew/opt/glfw/lib/" -o ${NAME}
 
 clean:
 			rm -f ${OBJT}
 			rm -rf $(LIBMLX)/build
 			make clean -s -C libft
+			make clean -s -C MLX42
 
 fclean: 	clean
 			rm -f ${NAME}
 			make fclean -s -C libft
+			make fclean -s -C MLX42
 
 re: 		fclean all
 

@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 18:54:39 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/15 18:55:10 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/09 17:01:16 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void	ft_print_map(char **map)
 		ft_printf("%s\n", map[n]);
 		n++;
 	}
+	ft_printf("__________________\n", map[n]);
 }
