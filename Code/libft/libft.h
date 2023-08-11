@@ -114,4 +114,7 @@ char		*get_next_line(int fd);
 long int	ft_atol(const char *str);
 int			ft_strcmp(char *s1, char *s2);
 
+/* Free functions */
+void	ft_free_doublepointer(char	**pointer)
+
 #endif

@@ -100,5 +100,13 @@ void	ft_render_person(t_game *game);
 
 /* Keys */
 void	keys(mlx_key_data_t keydata, void *param);
+void	w_key(t_game *game);
+void	s_key(t_game *game);
+void	a_key(t_game *game);
+void	d_key(t_game *game);
+
+/* Game Utils */
+void	ft_moves_counter(t_game *game);
+void	ft_rm_obj(t_game *game);
 
 #endif

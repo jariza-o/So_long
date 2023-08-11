@@ -53,6 +53,7 @@ int	main(int argc, char **argv)
 			game.map_copy = ft_read_map(argv[1]);
 			if (!map_checker(&game)) //si todos los demás checkers son correctos
 				ft_so_long(&game);
+			ft_free(game); // HAY QUE LIBERAR ALGO DE LA LIBRERIA??
 		}
 	}
 	else

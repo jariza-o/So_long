@@ -30,7 +30,7 @@ void	ft_load_textures(t_game *game)
 	mlx_delete_texture(game->textures.person);
 	mlx_delete_texture(game->textures.obj);
 	mlx_delete_texture(game->textures.exit);
-	// tengo que liberar game->textures porque ya no se hace, pero puedo hacer free(game->textures) ??
+	free(game->textures); // Libera así bien ??
 }
 
 void	ft_render_floor(t_game *game)
@@ -44,7 +44,6 @@ void	ft_render_floor(t_game *game)
 		i = 0;
 		while (game->map[n][i])
 		{
-			// game->images.floor = mlx_texture_to_image(game->mlx, game->textures.floor); //nose si se puede poner al principio, a lo mejor ocupa menos mememoria
 			if (mlx_image_to_window(game->mlx, game->images.floor, i * SPRITE, n * SPRITE) < 0) // La función mlx_image_to_windows como la llamas en el if se ejecuta hay
 				exit(1); //Al principio se pone exit(1) y libera toda la memoria, despues no se aconseja ponerlo.
 			i++;
@@ -66,19 +65,16 @@ void	ft_render_others(t_game *game)
 		{
 			if (game->map[n][i] == '1')
 			{
-				// game->images.walls = mlx_texture_to_image(game->mlx, game->textures.walls);
 				if (mlx_image_to_window(game->mlx, game->images.walls, i * SPRITE, n * SPRITE) < 0) // La función mlx_image_to_windows como la llamas en el if se ejecuta hay
 					exit(1); //Al principio se pone exit(1) y libera toda la memoria, despues no se aconseja ponerlo.
 			}
 			else if (game->map[n][i] == 'C')
 			{
-				// game->images.obj = mlx_texture_to_image(game->mlx, game->textures.obj);
 				if (mlx_image_to_window(game->mlx, game->images.obj, i * SPRITE, n * SPRITE) < 0) // La función mlx_image_to_windows como la llamas en el if se ejecuta hay
 					exit(1);
 			}
 			else if (game->map[n][i] == 'E')
 			{
-				// game->images.exit = mlx_texture_to_image(game->mlx, game->textures.exit);
 				if (mlx_image_to_window(game->mlx, game->images.exit, i * SPRITE, n * SPRITE) < 0) // La función mlx_image_to_windows como la llamas en el if se ejecuta hay
 					exit(1);
 			}

@@ -19,10 +19,11 @@ CFLAGS =	-Wall -Werror -Wextra
 
 # So_long
 NAME =		so_long
-SRC =		src/so_long.c src/utils.c \
+SRC =		src/so_long.c \
 			src/map/map.c \
 			src/game/render.c src/game/keys.c \
 			src/errors/map_checker_utils.c src/errors/map_checker_utils2.c src/errors/map_errors.c \
+			src/utils/free.c src/utils/utils.c \
 
 OBJT =		$(SRC:.c=.o)
 
