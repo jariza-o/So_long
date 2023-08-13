@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 10:57:07 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/11 10:57:07 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/13 15:32:24 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ void	w_key(t_game *game)
 		if (game->n_objs == game->c_objs)
 		{
 			game->images.person->instances[0].y -= 64;
+			ft_moves_counter(game);
 			ft_printf("YOU WIN!!\n");
 			mlx_close_window(game->mlx);
 		}
 		else
 			printf("Hunts all ghosts.\n");
+		return ;
 	}
-	else
-		game->images.person->instances[0].y -= 64;
+	game->images.person->instances[0].y -= 64;
 	if (game->map[game->person.y_position - 1][game->person.x_position] == 'C')
 	{
 		game->c_objs += 1;
@@ -49,14 +50,15 @@ void	s_key(t_game *game)
 		if (game->n_objs == game->c_objs)
 		{
 			game->images.person->instances[0].y += 64;
+			ft_moves_counter(game);
 			ft_printf("YOU WIN!!\n");
 			mlx_close_window(game->mlx);
 		}
 		else
 			printf("Hunts all ghosts.\n");
+		return ;
 	}
-	else
-		game->images.person->instances[0].y += 64;
+	game->images.person->instances[0].y += 64;
 	if (game->map[game->person.y_position + 1][game->person.x_position] == 'C')
 	{
 		game->c_objs += 1;
@@ -77,14 +79,15 @@ void	a_key(t_game *game)
 		if (game->n_objs == game->c_objs)
 		{
 			game->images.person->instances[0].x -= 64;
+			ft_moves_counter(game);
 			ft_printf("YOU WIN!!\n");
 			mlx_close_window(game->mlx);
 		}
 		else
 			printf("Hunts all ghosts.\n");
+		return ;
 	}
-	else
-		game->images.person->instances[0].x -= 64;
+	game->images.person->instances[0].x -= 64;
 	if (game->map[game->person.y_position][game->person.x_position - 1] == 'C')
 	{
 		game->c_objs += 1;
@@ -105,15 +108,16 @@ void	d_key(t_game *game)
 		if (game->n_objs == game->c_objs)
 		{
 			game->images.person->instances[0].x += 64;
+			ft_moves_counter(game);
 			ft_printf("YOU WIN!!\n");
 			mlx_close_window(game->mlx);
 		}
 		else
 			printf("Hunts all ghosts.\n");
+		return ;
 	}
-	else
-		game->images.person->instances[0].x += 64;
-	if (game->map[game->person.y_position][game->person.x_position - 1] == 'C')
+	game->images.person->instances[0].x += 64;
+	if (game->map[game->person.y_position][game->person.x_position + 1] == 'C')
 	{
 		game->c_objs += 1;
 		ft_rm_obj(game);

@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:12:25 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/19 21:36:28 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/13 17:10:57 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	ft_check_path(t_game *game)
 	while (game->map_copy[n])
 	{
 		i = 1;
-		while(game->map_copy[n][i])
+		while (game->map_copy[n][i])
 		{
 			if (game->map[n][i] == 'E' || game->map[n][i] == 'C')
 				return (0);

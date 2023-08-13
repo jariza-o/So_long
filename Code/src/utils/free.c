@@ -6,11 +6,11 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:48:46 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/11 12:48:46 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/13 17:01:15 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long.h"
 
 void	ft_free(t_game *game)
 {

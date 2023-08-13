@@ -6,7 +6,7 @@
 #    By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/10 15:06:08 by jariza-o          #+#    #+#              #
-#    Updated: 2023/08/09 13:37:31 by jariza-o         ###   ########.fr        #
+#    Updated: 2023/08/13 19:05:46 by jariza-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,9 @@ CFLAGS =	-Wall -Werror -Wextra
 NAME =		so_long
 SRC =		src/so_long.c \
 			src/map/map.c \
-			src/game/render.c src/game/keys.c \
+			src/game/render.c src/game/keys.c src/game/keys_2.c\
 			src/errors/map_checker_utils.c src/errors/map_checker_utils2.c src/errors/map_errors.c \
-			src/utils/free.c src/utils/utils.c \
+			src/utils/help.c src/utils/free.c src/utils/utils.c \
 
 OBJT =		$(SRC:.c=.o)
 

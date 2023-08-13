@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:11:08 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/09 18:58:02 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/13 17:22:09 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,23 +93,21 @@ int	ft_check_init(t_game *game)
 	int	check_i;
 
 	n = 0;
-	i = 0;
-	check_i = 0;
 	while (game->map[n])
 	{
+		i = 0;
 		while (game->map[n][i])
 		{
-			if (game->map[n][i] == 'P')
+			if (game->map[n][i] == 'P' && check_i == 1)
+				return (0);
+			else if (game->map[n][i] == 'P')
 			{
 				game->person.y_position = n;
 				game->person.x_position = i;
 				check_i = 1;
 			}
-			else if (game->map[n][i] == 'P' && check_i == 1)
-				return (0);
 			i++;
 		}
-		i = 0;
 		n++;
 	}
 	if (check_i == 0)

@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:06:47 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/09 18:54:18 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/13 19:04:33 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,21 +45,23 @@ typedef struct s_images
 
 typedef struct s_game
 {
-	mlx_t	*mlx;
+	mlx_t		*mlx;
 	t_position	map_size;
-	char	**map;
-	char	**map_copy;
-	int		n_objs;
-	int		c_objs;
+	char		**map;
+	char		**map_copy;
+	int			n_objs;
+	int			c_objs;
 	t_position	person;
-	t_textures	textures;
 	t_images	images;
-	int	moves;
+	int			moves;
 }	t_game;
 
 /* Utils */
 /* Print Map*/
 void	ft_print_map(char **map);
+
+/* HELP */
+void	help(void);
 
 /* READ MAP */
 /* Read the map file */
@@ -108,5 +110,8 @@ void	d_key(t_game *game);
 /* Game Utils */
 void	ft_moves_counter(t_game *game);
 void	ft_rm_obj(t_game *game);
+
+/* Free */
+void	ft_free(t_game *game);
 
 #endif

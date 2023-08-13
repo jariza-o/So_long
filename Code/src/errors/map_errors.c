@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:22:02 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/19 21:37:38 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/13 16:15:35 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	ft_check_file(char *fd)
 		return (0);
 	}
 	file = open(fd, O_RDONLY);
-	if (file == -1) //VSCODE LO MARCA COMO ERROR ¡¡REVISAR!!
+	if (file == -1)
 	{
 		ft_printf("Error: File not found.");
 		ft_printf(" For help run: so_long --help\n");

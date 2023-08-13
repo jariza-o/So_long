@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 19:31:59 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/07/12 17:59:06 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/13 19:36:50 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,6 @@ long int	ft_atol(const char *str);
 int			ft_strcmp(char *s1, char *s2);
 
 /* Free functions */
-void	ft_free_doublepointer(char	**pointer)
+void		ft_free_doublepointer(char	**pointer);
 
 #endif

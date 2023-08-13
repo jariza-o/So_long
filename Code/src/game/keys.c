@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 13:33:24 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/09 19:35:57 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/13 17:23:19 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	keys(mlx_key_data_t keydata, void *param)
 {
 	t_game		*game;
-	
+
 	game = param;
 	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_RELEASE)
 		mlx_close_window(game->mlx);
@@ -26,9 +26,7 @@ void	keys(mlx_key_data_t keydata, void *param)
 	else if (keydata.key == MLX_KEY_A && keydata.action == MLX_RELEASE)
 		a_key(game);
 	else if (keydata.key == MLX_KEY_D && keydata.action == MLX_RELEASE)
-	{
 		d_key(game);
-	}
 }
 
 void	ft_moves_counter(t_game *game)
@@ -44,7 +42,7 @@ void	ft_rm_obj(t_game *game)
 	n = 0;
 	while (game->n_objs > n)
 	{
-		if ((game->images.obj->instances[n].y == game->images.person->instances->y)	&& (game->images.obj->instances[n].x == game->images.person->instances->x))
+		if ((game->images.obj->instances[n].y == game->images.person->instances->y) && (game->images.obj->instances[n].x == game->images.person->instances->x))
 			game->images.obj->instances[n].enabled = 0;
 		n++;
 	}
