@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:06:47 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/13 19:04:33 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/14 23:50:25 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_textures
 	mlx_texture_t	*walls;
 	mlx_texture_t	*person;
 	mlx_texture_t	*obj;
+	mlx_texture_t	*enemy;
 	mlx_texture_t	*exit;
 }	t_textures;
 
@@ -40,6 +41,7 @@ typedef struct s_images
 	mlx_image_t	*walls;
 	mlx_image_t	*person;
 	mlx_image_t	*obj;
+	mlx_image_t	*enemy;
 	mlx_image_t	*exit;
 }	t_images;
 
@@ -106,10 +108,15 @@ void	w_key(t_game *game);
 void	s_key(t_game *game);
 void	a_key(t_game *game);
 void	d_key(t_game *game);
+void	w_key_bonus(t_game *game);
+void	s_key_bonus(t_game *game);
+void	a_key_bonus(t_game *game);
+void	d_key_bonus(t_game *game);
 
 /* Game Utils */
 void	ft_moves_counter(t_game *game);
 void	ft_rm_obj(t_game *game);
+void	ft_counter_bonus(t_game *game);
 
 /* Free */
 void	ft_free(t_game *game);
