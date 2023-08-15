@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:12:25 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/13 17:10:57 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/15 12:18:37 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ int	ft_check_path(t_game *game)
 	int	i;
 
 	n = 1;
-	ft_flood_fill(game, game->person.y_position, game->person.x_position); // VER SI ESTO ESTÁ BIEN
+	ft_flood_fill(game, game->person.y_position, game->person.x_position);
 	while (game->map_copy[n])
 	{
 		i = 1;
 		while (game->map_copy[n][i])
 		{
-			if (game->map[n][i] == 'E' || game->map[n][i] == 'C')
+			if (game->map_copy[n][i] == 'E' || game->map_copy[n][i] == 'C')
 				return (0);
 			i++;
 		}

@@ -6,25 +6,39 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:19:52 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/01 16:27:17 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/15 15:59:11 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
+
+int	ft_reserve_read_memory(char *fd)
+{
+	char	*tmp;
+	char	i;
+	int		file;
+
+	i = 0;
+	file = open(fd, O_RDONLY);
+	tmp = get_next_line(file);
+	while (tmp != NULL)
+	{
+		free(tmp);
+		tmp = get_next_line(file);
+		i++;
+	}
+	close (file);
+	return (i);
+}
 
 char	**ft_read_map(char *fd)
 {
 	char	**map;
 	int		i;
 	int		file;
-	int		file_len;
 
-	i = 0;
-	file_len = open(fd, O_RDONLY);
-	while (get_next_line(file_len) != NULL) //CREO QUE LA ULTIMA ES NULL PERO NO ESTOY SEGURO
-		i++;
-	close (file_len);
-	map = malloc(sizeof(char *) * (i + 1)); //SE SUMA +1??
+	i = ft_reserve_read_memory(fd);
+	map = malloc(sizeof(char *) * (i + 1));
 	if (map == NULL)
 		return (NULL);
 	i = 0;

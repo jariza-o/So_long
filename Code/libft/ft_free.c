@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:24:09 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/11 12:24:09 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/15 13:37:56 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	ft_free_doublepointer(char	**pointer)
 		free(pointer[i]);
 		i++;
 	}
+//	free(pointer[i]);
 	free(pointer);
 }

@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 13:33:24 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/13 17:23:19 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/15 15:49:09 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ void	ft_rm_obj(t_game *game)
 	n = 0;
 	while (game->n_objs > n)
 	{
-		if ((game->images.obj->instances[n].y == game->images.person->instances->y) && (game->images.obj->instances[n].x == game->images.person->instances->x))
+		if ((game->images.obj->instances[n].y == \
+			game->images.person->instances->y)
+			&& (game->images.obj->instances[n].x == \
+			game->images.person->instances->x))
 			game->images.obj->instances[n].enabled = 0;
 		n++;
 	}

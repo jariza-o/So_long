@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:06:47 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/14 23:50:25 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/15 15:45:12 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ void	ft_so_long(t_game *game);
 void	ft_load_textures(t_game *game);
 void	ft_render_floor(t_game *game);
 void	ft_render_others(t_game *game);
+void	ft_render_obj(t_game *game);
 void	ft_render_person(t_game *game);
 
 /* Keys */
@@ -108,15 +109,10 @@ void	w_key(t_game *game);
 void	s_key(t_game *game);
 void	a_key(t_game *game);
 void	d_key(t_game *game);
-void	w_key_bonus(t_game *game);
-void	s_key_bonus(t_game *game);
-void	a_key_bonus(t_game *game);
-void	d_key_bonus(t_game *game);
 
 /* Game Utils */
 void	ft_moves_counter(t_game *game);
 void	ft_rm_obj(t_game *game);
-void	ft_counter_bonus(t_game *game);
 
 /* Free */
 void	ft_free(t_game *game);

@@ -6,7 +6,7 @@
 #    By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 19:02:46 by jariza-o          #+#    #+#              #
-#    Updated: 2023/06/18 20:16:06 by jariza-o         ###   ########.fr        #
+#    Updated: 2023/08/15 16:02:58 by jariza-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,14 +33,14 @@ CFLAGS = 	-Wall -Werror -Wextra
 all:		$(NAME)
 
 $(NAME):
-			gcc -c $(CFLAGS) $(SRC)
-			ar rcs $(NAME) $(OBJT)
+			@gcc -c $(CFLAGS) $(SRC)
+			@ar rcs $(NAME) $(OBJT)
 
 clean:
-			rm -f $(OBJT) $(OBJTBONUS)
+			@rm -f $(OBJT) $(OBJTBONUS)
 
 fclean: 	clean
-			rm -f $(NAME)
+			@rm -f $(NAME)
 
 re: 		fclean all
 
