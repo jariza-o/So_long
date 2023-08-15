@@ -6,7 +6,7 @@
 #    By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/10 15:06:08 by jariza-o          #+#    #+#              #
-#    Updated: 2023/02/28 12:18:28 by jariza-o         ###   ########.fr        #
+#    Updated: 2023/08/15 11:36:15 by jariza-o         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ LIBFT =		libft/libft.a
 MLX42 =		MLX42/libmlx42.a
 
 # Flags
-CFLAGS =	-Wall -Werror -Wextra
+CFLAGS =	-Wall -Werror -Wextra -g
 
 # So_long
 NAME =		so_long

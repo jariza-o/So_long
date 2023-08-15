@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:03:04 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/14 23:33:07 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/15 11:48:37 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	ft_so_long(t_game *game)
 	ft_render_person(game);
 	mlx_key_hook(game->mlx, keys, game);
 	mlx_loop(game->mlx); // mantener abierto el juego
-	mlx_put_string(game->mlx, "Moves: 0",
-		((game->map_size.y_position / 2) * 64) - 48,
-		((game->map_size.x_position / 2) * 64)); //NO SE SI ASI ESTA BIEN
+	// mlx_put_string(game->mlx, "Moves: 0",
+	// 	((game->map_size.y_position / 2) * 64) - 48,
+	// 	((game->map_size.x_position / 2) * 64)); //NO SE SI ASI ESTA BIEN
 	mlx_terminate(game->mlx); // cerrar el juego
 }
 

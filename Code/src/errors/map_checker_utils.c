@@ -6,7 +6,7 @@
 /*   By: jariza-o <jariza-o@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:11:08 by jariza-o          #+#    #+#             */
-/*   Updated: 2023/08/13 17:22:09 by jariza-o         ###   ########.fr       */
+/*   Updated: 2023/08/15 11:44:26 by jariza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ int	ft_check_init(t_game *game)
 	int	check_i;
 
 	n = 0;
+	check_i = 0;
 	while (game->map[n])
 	{
 		i = 0;
@@ -110,8 +111,6 @@ int	ft_check_init(t_game *game)
 		}
 		n++;
 	}
-	if (check_i == 0)
-		return (0);
 	return (1);
 }
 
