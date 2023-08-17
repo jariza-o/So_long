@@ -13,13 +13,19 @@ The project consists of creating a 2D mini-game with the help of the MLX library
 ## Instructions
 
 - The W, A, S and D keys will be used to move the player.
+</br>
 <p align="center">
 <img src="https://github.com/jariza-o/So_long/blob/main/game_picture.png" width="800px" alt="mandatory"/><br>
 </p>
+</br>
 -  The player cannot enter the walls.
+</br>
 -  After each movement, the current number of moves should be displayed in the terminal.
+</br>
 -  The game doesn’t need to be real-time.
+</br>
 -  You can revise the help with the next command:
+</br>
 
 ```sh
 ./so_long --help
